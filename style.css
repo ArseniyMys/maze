@@ -19,7 +19,8 @@ body {
 
 /* Popups */
 .rules,
-.winner {
+.winner,
+.warning {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +29,11 @@ body {
   width: 100vw;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Warning */
+.warning {
+  display: none;
 }
 
 /* Rules */
@@ -40,6 +46,17 @@ body {
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
   justify-items: center;
+}
+
+@media (hover: none) {
+  .rules {
+    display: none ;
+  }
+
+  .warning {
+    display: flex;
+    text-align: center;
+  }
 }
 
 .rules p {
