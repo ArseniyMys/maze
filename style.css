@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'Pixel';
+  src: url('pixel-font-webfont.woff2') format('woff2'),
+    url('pixel-font-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: Pixel;
+}
+
+/* Popups */
+.rules,
+.winner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Rules */
+.rules {
+  transition: all 1s;
+  padding: 10%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
+
+.rules p {
+  grid-column: 1 / -1;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    '. up .'
+    'left down right';
+  gap: 1rem;
+}
+
+.key {
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+  border-radius: 3px;
+  font-size: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.w,
+.up {
+  grid-area: up;
+}
+
+.a,
+.left {
+  grid-area: left;
+}
+
+.s,
+.down {
+  grid-area: down;
+}
+
+.d,
+.right {
+  grid-area: right;
+}
+
+/* Winner */
+.hidden {
+  transform: scale(0) !important;
+}
+
+h1 {
+  color: white;
+  font-size: 4rem;
+}
+
+.winner {
+  transition: all 1s;
+  transform: scale(1);
+}
